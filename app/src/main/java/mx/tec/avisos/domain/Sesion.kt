@@ -27,5 +27,7 @@ data class Sesion(
     val refreshToken: String,
     val expiraEn: Long
 ) {
+
+
     fun segundosRestantes(ahora: Long = System.currentTimeMillis() / 1000): Long = expiraEn - ahora
 }
