@@ -27,5 +27,9 @@ data class Sesion(
     val refreshToken: String,
     val expiraEn: Long
 ) {
+    /** La regla de autorización, vista desde el cliente. El servidor la repite. */
+    // EXPERIMENTO C2: la app "decide" que todos pueden publicar. ¿Y el servidor?
+    val puedePublicar: Boolean get() = true
+
     fun segundosRestantes(ahora: Long = System.currentTimeMillis() / 1000): Long = expiraEn - ahora
 }
